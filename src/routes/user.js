@@ -13,6 +13,7 @@ router.post('/users', (req, res)=>{
 //Traer usuarios
 router.get('/users', (req, res)=>{
     try {
+        res.send("Esperando")
         userSchema
         .find()
         .then(data=> res.json(data))
