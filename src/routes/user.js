@@ -12,10 +12,13 @@ router.post('/users', (req, res)=>{
 })
 //Traer usuarios
 router.get('/users', (req, res)=>{
-    userSchema
-    .find()
-    .then(data=> res.json(data))
-    .catch(error=> res.json({message: error}))
+    try {
+        userSchema
+        .find()
+        .then(data=> res.json(data))
+    }catch(error) {
+        res.json({message: error})
+    }
 })
 //Traer usuario especifico
 router.get('/users/:id', (req, res)=>{
